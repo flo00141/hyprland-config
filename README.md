@@ -8,6 +8,7 @@ A personalized Hyprland setup running on NixOS, featuring:
 - 🔹 Dynamic theming possible with Matugen
 - 🔹 Nerd Fonts + Rofi/Fuzzel
 - 🔹 NixOS integration via `hyprland.nix`
+- 🔹 Matugen integration
 
 ## 📷 Screenshot
 ![preview](./hyprland_demo.gif)  # ← à modifier si tu veux afficher un fond

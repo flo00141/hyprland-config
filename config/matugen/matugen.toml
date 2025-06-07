@@ -1,0 +1,25 @@
+# ~/.config/matugen/matugen.toml
+
+[config]
+backend = "material-you"
+
+[templates.waybar]
+input_path = "~/.config/matugen/templates/waybar-colors.css.jinja"
+output_path = "~/.config/waybar/color.css"
+post_hook = "~/.config/matugen/scripts/post_hook.sh"
+
+[templates.kitty]
+input_path = "~/.config/matugen/templates/kitty-colors.conf"
+output_path = "~/.config/kitty/colors.conf"
+post_hook = "kitty @ set-colors -a -c ~/.config/kitty/colors.conf"
+
+[templates.hyprland]
+input_path = "~/.config/matugen/templates/hyprland-colors.conf"
+output_path = "~/.config/hypr/colors.conf"
+post_hook = "sleep 0.5 && hyprctl reload"
+
+[templates.rofi]
+input_path = "~/.config/matugen/templates/rofi-colors.rasi"
+output_path = "~/.config/rofi/colors.rasi"
+post_hook = "true"
+
