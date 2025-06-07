@@ -1,0 +1,138 @@
+{
+  "layer": "top",
+  "exclusive": true,
+  "position": "top",
+  "modules-left": [
+    "custom/apps",
+    "custom/clock_fr",
+    "custom/playerctl"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "custom/clipboard",
+    "custom/vault",
+    "pulseaudio",
+    "custom/bluetooth",
+    "network",
+    "battery",
+    "custom/tlp",
+    "custom/brightness",
+    "custom/powermenu",
+    "tray"
+  ],
+
+  "custom/vault": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/vault_status.sh",
+    "interval": 2,
+    "on-click": "~/.config/waybar/scripts/vault_toggle.sh"
+  },
+
+  "custom/apps": {
+    "format": "󱂬 Apps",
+    "tooltip": false,
+    "on-click": "~/.config/waybar/scripts/app-launcher.sh",
+    "on-click-right": "notify-send 'Apps' 'Ouvre ton launcher personnalisé !'",
+    "interval": 0
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "hyprctl dispatch workspace {id}",
+    "format-icons": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " ",
+      "5": " ",
+      "6": " ",
+//      "7": "7",
+//      "8": "8",
+//      "9": "9",
+//      "10": "10"
+    },
+    "all-outputs": true,
+    "persistent-workspaces": {
+      "eDP-1": [1,2,3,4,5,6]
+    }
+  },
+
+  "custom/clock_fr": {
+    "exec": "/home/florian/.config/waybar/scripts/clock_fr.sh",
+    "interval": 60,
+    "tooltip": false,
+    "format": "{}",
+  },
+
+  "pulseaudio": {
+    "format": "   {volume}% ",
+    "tooltip": false,
+    "on-click": "hyprctl dispatch exec '[float;size 800 600;center] pavucontrol'"
+  },
+
+  "battery": {
+    "format": " {icon}  {capacity}% ",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "network": {
+    "format-wifi": "   {essid} ",
+    "format-ethernet": " 󰈀  {ipaddr} ",
+    "format-disconnected": " ⚠️ ",
+    "on-click": "hyprctl dispatch exec '[float] bash -c \"sleep 0.1 && kitty --class nmtui-popup --title nmtui-popup nmtui\"'"
+ },
+ 
+  "custom/bluetooth": {
+    "exec": "/home/florian/.config/waybar/scripts/bluetooth_status.sh",
+    "interval": 2,
+    "format": "{}",
+    "tooltip": false,
+    "on-click": "hyprctl dispatch exec '[float;size 800 600;center] blueman-manager'"
+ },
+
+  "custom/brightness": {
+    "exec": "/home/florian/.config/waybar/scripts/brightness_status.sh",
+    "interval": 2,
+    "format": "{}",
+    "tooltip": false,
+    "on-scroll-up": "brightnessctl set +1%",
+    "on-scroll-down": "brightnessctl set 1%-"
+  },
+
+  "custom/powermenu": {
+    "format": " ⏻ ",
+    "tooltip": true,
+    "tooltip-format": "Menu de session",
+    "on-click": "~/.config/hypr/scripts/fuzzel-logout.sh",
+    "interval": 3600
+  },
+
+  "custom/clipboard": {
+    "format": "  ",
+    "on-click": "sh -c 'cliphist list | fuzzel --dmenu --config ~/.config/fuzzel/fuzzel-clipboard.ini | cliphist decode | wl-copy'",
+    "interval": 5,
+    "return-type": "text",
+    "tooltip": false
+  },
+
+  "custom/playerctl": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/playerctl_status.sh",
+    "interval": 2,
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous"
+  },
+
+  "custom/tlp": {
+    "exec": "~/.config/waybar/scripts/tlp-status.sh",
+    "on-click": "~/.config/waybar/scripts/tlp-toggle.sh",
+    "interval": 1,
+    "tooltip": false
+  },
+
+}
+

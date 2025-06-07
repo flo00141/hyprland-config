@@ -1,0 +1,54 @@
+@import "color.css";
+
+/* Style général */
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 14px;
+  border-radius: 10px;
+  min-height: 0px;
+  padding: 0 2px;
+}
+
+window#waybar {
+  background-color: @background-trans;
+  color: @on_background;
+  margin: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+#workspaces {
+  margin: 7 8px;
+}
+
+#workspaces button {
+  padding: 0 0px;
+  background: @primary_container;
+  color: @on_primary_container;
+  border-radius: 5px;
+  margin: 5 3px;
+  transition: background 0.2s, color 0.2s;
+}
+
+#workspaces button:hover {
+  background: @on_primary_container;
+}
+
+#workspaces button.active {
+  background: @primary;
+  border-color: @outline;
+}
+
+#custom-apps, #custom-clock_fr, #custom-vault, #custom-tlp, #custom-playerctl, #custom-brightness, #custom-bluetooth, #clock, #battery, #memory, #cpu, #pulseaudio, #network {
+  background-color: @primary_container;
+  color: @on_surface;
+  padding: 2px 6px;
+  margin: 7 5px;
+  border-radius: 10px;
+  border: solid 1px;
+  border-color: @on_primary_container;
+}
+
+#custom-powermenu, #custom-clipboard {
+  color: @on_surface;
+}
+
