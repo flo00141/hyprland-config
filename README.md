@@ -10,7 +10,7 @@ A personalized Hyprland setup running on NixOS, featuring:
 - 🔹 NixOS integration via `hyprland.nix`
 
 ## 📷 Screenshot
-![preview](./config/wallpapers/your_wallpaper.png)  # ← à modifier si tu veux afficher un fond
+![preview](./hyprland_demo.gif)  # ← à modifier si tu veux afficher un fond
 
 ## 📁 Structure
 
@@ -22,8 +22,6 @@ config/
 └── hyprland.nix → Optional config if you use NixOS
 
 bash
-Copier
-Modifier
 
 ## 🚀 Preview
 ```bash
